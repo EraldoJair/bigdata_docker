@@ -1,46 +1,46 @@
 
-# BIG DATA ECOSYSTEM COM DOCKER
+# ECOSISTEMA BIG DATA CON DOCKER
 
-Ambiente para estudo dos principais frameworks big data em docker.
-<br> Esse setup vai criar dockers com os frameworks HDFS, HBase, Hive, Presto, Spark, Jupyter, Hue, Mongodb, Metabase, Nifi, kafka, Mysql e Zookeeper com a seguinte arquitetura:
+Ambiente para estudio de los principales frameworks de big data en Docker.
+<br> Este setup creará contenedores con los frameworks HDFS, HBase, Hive, Presto, Spark, Jupyter, Hue, Mongodb, Metabase, Nifi, Kafka, MySQL y Zookeeper con la siguiente arquitectura:
 <br>  
 
 ![Ecossistema](ecosystem.jpeg)
 
-## SOFTWARES NECESSÁRIOS
-#### Para a criação e uso do ambiente vamos utilizar o git e o Docker 
-   * Instalação do Docker Desktop no Windows [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows) ou o docker no [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
-   *  [Instalação do git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
+## SOFTWARES NECESARIOS
+#### Para la creación y uso del ambiente vamos a utilizar Git y Docker
+   * Instalación de Docker Desktop en Windows [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows) o Docker en [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+   * [Instalación de Git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git)
    
 ## SETUP
-*OBS: Esse passo deve ser realizado apena uma vez. Após o ambiente criado, utilizar o docker-compose para iniciar os containers como mostrado no tópico INICIANDO O AMBIENTE*
+*OBS: Este paso solo debe realizarse una vez. Después de crear el ambiente, utiliza docker-compose para iniciar los contenedores como se muestra en el tema INICIANDO EL AMBIENTE* 
 
-#### Criação do diretório docker:
-*OBS: Criar um diretório chamado docker*
+#### Creación del directorio docker:
+*OBS: Crea un directorio llamado docker*
 
-   *  Sugestão no Windows:
-      *  Criar na raiz do seu drive o diretório docker
-         ex: C:\docker
+   *  Sugerencia en Windows:
+      *  Crear en la raíz de tu unidad el directorio docker
+         ej: C:\\docker
           
-   * Sugestão no Linux:
-      * Criar o diretório na home do usuário
-        ex: /home/user/docker
+   * Sugerencia en Linux:
+      * Crear el directorio en la home del usuario
+        ej: /home/user/docker
 
-#### Em um terminal/DOS, dentro diretório docker, realizar o clone do projeto no github
+#### En una terminal/DOS, dentro del directorio docker, realiza el clon del proyecto en GitHub
           git clone https://github.com/fabiogjardim/bigdata_docker.git
 
-#### No diretório bigdata_docker vai existir os seguintes objetos
+#### En el directorio bigdata_docker estarán los siguientes objetos
 ![ls](ls.JPG)
 
    
-## INICIANDO O AMBIENTE
-   
-  *No Windows abrir PowerShell, do Linux um terminal*
+## INICIANDO EL AMBIENTE
 
-### No terminal, no diretorio bigdata_docker, executar o docker-compose
+  *En Windows abre PowerShell, en Linux una terminal*
+
+### En la terminal, en el directorio bigdata_docker, ejecuta docker-compose
           docker-compose up -d        
 
-### Verificar imagens e containers
+### Verificar imágenes y contenedores
  
          docker image ls
 
@@ -51,34 +51,34 @@ Ambiente para estudo dos principais frameworks big data em docker.
 ![docker container](docker_container_ls.JPG)
 
 ## SOLUCIONANDO PROBLEMAS 
-   
-  *No Windows abrir o Docker Quickstart Terminal*
 
-### Parar um containers
-         docker stop [nome do container]      
+  *En Windows abre el Docker Quickstart Terminal*
 
-### Parar todos containers
+### Detener un contenedor
+         docker stop [nombre del contenedor]      
+
+### Detener todos los contenedores
          docker stop $(docker ps -a -q)
   
-### Remover um container
-         docker rm [nome do container]
+### Eliminar un contenedor
+         docker rm [nombre del contenedor]
 
-### Remover todos containers
+### Eliminar todos los contenedores
          docker rm $(docker ps -a -q)         
 
-### Dados do containers
-         docker container inspect [nome do container]
+### Datos del contenedor
+         docker container inspect [nombre del contenedor]
 
-### Iniciar um container
-         docker-compose up -d [nome do container]
+### Iniciar un contenedor
+         docker-compose up -d [nombre del contenedor]
 
-### Iniciar todos os containers
+### Iniciar todos los contenedores
          docker-compose up -d 
 
-### Acessar log do container
-         docker container logs [nome do container] 
+### Acceder al log del contenedor
+         docker container logs [nombre del contenedor] 
 
-## Acesso WebUI dos Frameworks
+## Acceso WebUI de los Frameworks
  
 * HDFS *http://localhost:50070*
 * Presto *http://localhost:8080*
@@ -91,7 +91,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 * Hue *http://localhost:8888*
 * Spark *http://localhost:4040*
 
-## Acesso por shell
+## Acceso por shell
 
    ##### HDFS
 
@@ -109,7 +109,7 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
           docker exec -it kafka bash
 
-## Acesso JDBC
+## Acceso JDBC
 
    ##### MySQL
           jdbc:mysql://database/employees
@@ -122,30 +122,30 @@ Ambiente para estudo dos principais frameworks big data em docker.
 
           jdbc:presto://presto:8080/hive/default
 
-## Usuários e senhas
+## Usuarios y contraseñas
 
    ##### Hue
-    Usuário: admin
-    Senha: admin
+    Usuario: admin
+    Contraseña: admin
 
    ##### Metabase
-    Usuário: bigdata@class.com
-    Senha: bigdata123 
+    Usuario: bigdata@class.com
+    Contraseña: bigdata123 
 
    ##### MySQL
-    Usuário: root
-    Senha: secret
+    Usuario: root
+    Contraseña: secret   
    
    ##### MongoDB
-    Usuário: root
-    Senha: root
-    Authentication Database: admin
+    Usuario: root
+    Contraseña: root
+    Base de autenticación: admin
 
-## Imagens   
+## Imágenes    
 
 [Docker Hub](https://hub.docker.com/u/fjardim)
 
-## Documentação Oficial
+## Documentación Oficial
 
 * https://zookeeper.apache.org/
 * https://kafka.apache.org/
@@ -162,3 +162,4 @@ Ambiente para estudo dos principais frameworks big data em docker.
 * https://gethue.com/
 * https://github.com/yahoo/CMAK
 * https://www.docker.com/
+
